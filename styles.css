@@ -262,17 +262,24 @@ figcaption .num{font:600 12px var(--mono);color:var(--red);letter-spacing:.1em}
 .why.bento .w1 > :not(.w-map){grid-column:1;justify-self:start}
 .why.bento .w-map{grid-column:2;grid-row:1 / span 5;align-self:center}
 .ohio{display:block;width:100%;max-width:330px;margin-left:auto;overflow:visible}
-.oh-counties{fill:#f3f3f5;stroke:#dcdce1;stroke-width:.6}
-.oh-region{fill:rgba(235,0,40,.15);stroke:var(--red);stroke-width:1.4;stroke-linejoin:round;opacity:0;transition:opacity .9s var(--ease) .9s}
+.oh-counties,.oh-ctx path{fill:#f3f3f5;stroke:#dcdce1;stroke-width:.6}
+.oh-home{fill:#f9c9d3;stroke:#fff;stroke-width:.9;opacity:0;transition:opacity .45s ease calc(var(--d) + 500ms),fill .2s;cursor:default}
+.oh-home:hover{fill:#f37a92}
 .oh-state{fill:none;stroke:var(--ink);stroke-width:2.4;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.5,0,.2,1) .15s}
-.oh-pin{opacity:0;transform-box:fill-box;transform-origin:50% 100%;transition:opacity .4s 1.6s}
-.oh-dot{fill:var(--red);stroke:#fff;stroke-width:2.5}
-.oh-pulse{fill:var(--red);opacity:.25;transform-box:fill-box;transform-origin:center;animation:ohPulse 2.2s ease-out infinite}
-.oh-label{font:700 13px var(--body);fill:var(--ink);paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;opacity:0;transition:opacity .4s 1.8s}
+.oh-st{font:500 12px var(--body);fill:#9a9aa3}
+.oh-rings circle{fill:none;stroke:var(--red);stroke-width:1.3;vector-effect:non-scaling-stroke;transform-box:fill-box;transform-origin:center;opacity:0;pointer-events:none}
+.w1.in .oh-rings circle{animation:ohRing 4.5s cubic-bezier(.2,.6,.3,1) 1.8s infinite}
+.w1.in .oh-rings circle:nth-child(2){animation-delay:3.3s}
+.w1.in .oh-rings circle:nth-child(3){animation-delay:4.8s}
+@keyframes ohRing{0%{transform:scale(6);opacity:.55}100%{transform:scale(330);opacity:0}}
+.oh-pin{opacity:0;transition:opacity .3s 1.5s}
+.oh-dot{fill:var(--red);stroke:#fff;stroke-width:2.6;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25));transform-box:fill-box;transform-origin:center;transform:scale(.2);transition:transform .55s cubic-bezier(.3,1.6,.5,1) 1.5s}
+.oh-label{font:700 13px var(--body);fill:var(--ink);paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round;opacity:0;transition:opacity .4s 1.9s}
 .w1.in .oh-state{stroke-dashoffset:0}
-.w1.in .oh-region,.w1.in .oh-pin,.w1.in .oh-label{opacity:1}
-@keyframes ohPulse{from{transform:scale(.7);opacity:.35}to{transform:scale(2.6);opacity:0}}
-@media (prefers-reduced-motion:reduce){.oh-state{stroke-dashoffset:0}.oh-region,.oh-pin,.oh-label{opacity:1}}
+.w1.in .oh-home,.w1.in .oh-label{opacity:1}
+.w1.in .oh-pin{opacity:1}
+.w1.in .oh-dot{transform:scale(1)}
+@media (prefers-reduced-motion:reduce){.oh-state{stroke-dashoffset:0}.oh-home,.oh-pin,.oh-label{opacity:1}.oh-dot{transform:none}.oh-rings{display:none}}
 .why.bento .w-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
 .why.bento .w-list li{display:inline-flex;align-items:center;gap:8px;background:var(--g100);border-radius:999px;padding:9px 14px;font-weight:600;font-size:14px}
 .why.bento .w-list li::before{content:"\2713";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:800}
