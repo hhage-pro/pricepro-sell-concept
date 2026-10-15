@@ -238,8 +238,29 @@ figcaption .num{font:600 12px var(--mono);color:var(--red);letter-spacing:.1em}
 .wcard{background:#fff;border-radius:22px;padding:26px;border:1.5px solid var(--g200);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
 .wcard:nth-child(2){transition-delay:.08s}.wcard:nth-child(3){transition-delay:.16s}.wcard:nth-child(4){transition-delay:.24s}
 .wcard:hover{transform:translateY(-6px) rotate(-.6deg);box-shadow:0 18px 36px rgba(0,0,0,.08)}
-.wpill{display:inline-block;font:600 13px/1 var(--body);padding:6px 11px;border-radius:6px}
-.p1{background:#ffe3e8;color:#9b001b}.p2{background:#e8e8ff;color:#2d2d8f}.p3{background:#e3f6e8;color:#1d6b33}.p4{background:#fff1d6;color:#7a4b00}
+.wpill{display:inline-flex;align-items:center;gap:7px;font:600 13px/1 var(--body);padding:6px 11px 6px 8px;border-radius:999px;background:#fff0f3;color:var(--red-d)}
+.wpill .tagi{width:19px;height:11px;color:#fff}
+.why .bx{display:none}
+/* option: bento layout in PricePro colors (?why=bento) */
+.why.bento .why-grid{grid-template-columns:repeat(3,1fr)}
+.why.bento .bx{display:revert}
+.why.bento .w1{grid-column:span 2;order:1;position:relative;min-height:290px;padding:32px}
+.why.bento .w3{order:2;background:var(--red);border-color:var(--red);color:#fff}
+.why.bento .w2{order:3;background:var(--ink);border-color:var(--ink);color:#fff}
+.why.bento .w4{grid-column:span 2;order:4}
+.why.bento .w1 h3,.why.bento .w3 h3{font:850 40px/.95 var(--display);font-stretch:88%;text-transform:uppercase;margin:18px 0 10px}
+.why.bento .w1 h3,.why.bento .w1 p,.why.bento .w1 .w-addr,.why.bento .w1 .wpill{position:relative;z-index:1}
+.why.bento .w1 p{max-width:300px}
+.why.bento .w2 h3,.why.bento .w3 h3{color:#fff}
+.why.bento .w2 p{color:#b9b9c2}
+.why.bento .w3 p{color:rgba(255,255,255,.88)}
+.why.bento .w2 .wpill{background:rgba(255,255,255,.1);color:#fff}
+.why.bento .w3 .wpill{background:#fff;color:var(--red-d)}
+.why.bento .w-addr{display:inline-block;margin-top:20px;font-weight:600;font-size:15px;color:var(--ink);border-bottom:2px solid var(--red);padding-bottom:3px}
+.why.bento .w-art{position:absolute;right:-18px;bottom:-12px;width:56%;max-width:420px}
+.why.bento .w-list{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.why.bento .w-list li{display:inline-flex;align-items:center;gap:8px;background:var(--g100);border-radius:999px;padding:9px 14px;font-weight:600;font-size:14px}
+.why.bento .w-list li::before{content:"\2713";display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:11px;font-weight:800}
 .wcard h3{font-size:20px;margin:16px 0 6px}
 .wcard p{margin:0;color:var(--muted);font-size:15px}
 
@@ -376,6 +397,8 @@ figcaption .num{font:600 12px var(--mono);color:var(--red);letter-spacing:.1em}
 @media (max-width:1100px){
   .nav a:not(.on){display:none}
   .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why.bento .why-grid{grid-template-columns:repeat(2,1fr)}
+  .why.bento .w4{grid-column:span 2}
   .b3,.b4{display:none}
 }
 @media (max-width:900px){
@@ -406,6 +429,10 @@ figcaption .num{font:600 12px var(--mono);color:var(--red);letter-spacing:.1em}
   .hero-group .pg-plate{flex:1}
   .hero-group .pill{flex-basis:100%;height:54px;margin:5px 0 0}
   .why-grid{grid-template-columns:1fr}
+  .why.bento .why-grid{grid-template-columns:1fr}
+  .why.bento .w1,.why.bento .w4{grid-column:auto}
+  .why.bento .w1{padding-bottom:190px}
+  .why.bento .w-art{width:78%}
   .est{grid-template-columns:1fr}
   .seg{justify-content:stretch}.seg button{flex:1;height:44px}
   .row3{grid-template-columns:1fr}

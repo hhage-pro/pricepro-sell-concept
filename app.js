@@ -12,6 +12,9 @@
   const money = n => '$' + Math.round(n).toLocaleString('en-US');
   const API = window.PPApi;
 
+  // layout options for review: ?why=bento
+  if (new URLSearchParams(location.search).get('why') === 'bento') $('.why').classList.add('bento');
+
   // ---------- review notes ----------
   const rt = $('#reviewToggle');
   $('#noteCount').textContent = $$('[data-note]').length;
